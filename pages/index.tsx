@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
-          Gallery reproduction of Archie Sketch using next.js
+          Gallery reproduction using next.js
         </Typography>
         <Link href="/gallery" color="secondary">
           <Button sx={{mt: 3}} variant='contained'>
