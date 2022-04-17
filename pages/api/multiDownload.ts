@@ -4,7 +4,6 @@ import { NextApiRequest, NextApiResponse } from "next/types";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const urls: string[] = req.body.urls;
-  console.log("urls", urls);
   const proms = [];
 
   for (let i = 0; i < urls.length; i++) {
