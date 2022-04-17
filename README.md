@@ -14,3 +14,5 @@ or run as devlop
 $ npm install
 $ npn run dev
 ```
+
+run in http://localhost:3000
