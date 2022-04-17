@@ -10,7 +10,6 @@ export const handleDelMulti = (
   setMultipleSelectedImg: SetterOrUpdater<number[]>
 ) => {
   const selectedArr = [...multipleSelectedImg];
-  console.log("selectedArr", selectedArr);
   const bool = window.confirm("삭제하시겠습니까?");
   if (bool) {
     const _savedImg = [...savedImg];

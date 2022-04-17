@@ -2,7 +2,7 @@ import { Button, styled, Container } from "@mui/material"
 import testImageUrl from 'common/test-data/testImageUrl'
 import Link from 'next/link'
 import { useEffect } from "react"
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { savedImgState } from "common/atoms/savedImgState";
 import SelectImgModal from './SelectImgModal'
 import SmallImage from './SmallImage'
@@ -10,7 +10,6 @@ import handleDelMulti from "common/utils/handleDelMulti";
 import { multipleSelectedImgState } from "common/atoms/multipleSelectedImgState";
 import multiDownload from "common/utils/multiDownload";
 import singleDownload from "common/utils/singleDownload";
-import SavedImg from "common/types/SavedImg";
 import getAllArr from "common/utils/getAllArr";
 
 const MainContainer = styled('div')({
@@ -25,7 +24,6 @@ export const Gallery = () => {
   const [multipleSelectedImg, setMultipleSelectedImg] = useRecoilState(multipleSelectedImgState)
 
   useEffect(()=>{
-    console.log('savedImg',savedImg)
     setSavedImg(testImageUrl)
   },[])
   return (

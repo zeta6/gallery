@@ -32,8 +32,6 @@ const SelectImgModalContainer = styled("div")({
   backgroundColor: "#ffffff",
 });
 
-// console.log('selectImgUrl',selectImgUrl)
-
 const SelectImgModal = (): EmotionJSX.Element => {
   const [selectImgUrl, setSelectImgUrl] = useRecoilState(selectImgUrlState);
   const [curImgIndex, setCurImgIndex] = useRecoilState(curImgIndexState)
