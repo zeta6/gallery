@@ -13,13 +13,13 @@ interface SmallImageProp {
   imgIndex: number
 }
 
-const SmallImgInput = styled('input')({ 
+const SmallImgCheckBox = styled('input')({ 
   zIndex:2, 
   position: 'absolute', 
   top: '10px', 
   left: '10px', 
-  width:'17px', 
-  height:'17px', 
+  width:'20px', 
+  height:'20px', 
   filter: 'brightness(100%)', 
   backgroundColor:'#ffffff' 
 })
@@ -39,7 +39,6 @@ export const SmallImage = ({imgUrl, imgIndex} : SmallImageProp) => {
   const [curImgIndex, setCurImgIndex] = useRecoilState(curImgIndexState)
   const [multipleSelectedImg, setMultipleSelectedImg] = useRecoilState(multipleSelectedImgState)
   const [checked, setChecked ] = useState(false)
-  // const [savedImg, setSavedImg ] = useRecoilState(savedImgState)
 
   const handleCheck = (checkVal : boolean) => {
     if(checkVal) {
@@ -52,7 +51,6 @@ export const SmallImage = ({imgUrl, imgIndex} : SmallImageProp) => {
       _multipleSelectedImg.splice(_index, 1)
       setMultipleSelectedImg(_multipleSelectedImg)
     }
-    console.log('multipleSelectedImg',multipleSelectedImg)
   }
 
   useEffect(()=> {
@@ -64,9 +62,9 @@ export const SmallImage = ({imgUrl, imgIndex} : SmallImageProp) => {
     onMouseEnter={() => setMounseOver(true)}
     onMouseLeave={() => setMounseOver(false)}
   >   
-    <SmallImgInput checked={checked} onChange={(e)=>handleCheck(e.target.checked)} type="checkbox" sx={{visibility: mouseOver ? "visible" : "hidden" }} />
+    <SmallImgCheckBox checked={checked} onChange={(e)=>handleCheck(e.target.checked)} type="checkbox" sx={{visibility: mouseOver ? "visible" : "hidden" }} />
     <SmallImageFadeMenu imgIndex={imgIndex} imgUrl={imgUrl}></SmallImageFadeMenu>
-      <div style={{margin:0,zIndex:1, height:'20vh', filter: mouseOver ? 'brightness(50%)' : 'brightness(100%)'}}>
+      <div style={{margin:0,zIndex:1, height:'18vh', aspectRatio: '16 / 9', filter: mouseOver ? 'brightness(50%)' : 'brightness(100%)'}}>
         <Image onClick={()=>setCurImgIndex(imgIndex)} layout="fill" src={imgUrl}></Image>
       </div>
   </SmallImgContainer>
