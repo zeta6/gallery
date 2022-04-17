@@ -62,11 +62,11 @@ const SelectImgModal = (): EmotionJSX.Element => {
           onClick={()=>singleDownload(selectImgUrl)}>
           다운로드
         </Button>
-        <Button variant="outlined" sx={{position: 'fixed', top:'48%', left:'20px'}}
-          onClick={()=> curImgIndex > 1 && setCurImgIndex(curImgIndex-1)}>
+        <Button variant="outlined" sx={{position: 'fixed', top:'48%', left:'20px', zIndex:3}}
+          onClick={()=> curImgIndex > 0 && setCurImgIndex(curImgIndex-1)}>
           <ChevronLeftIcon></ChevronLeftIcon>
         </Button>
-        <Button variant="outlined" sx={{position: 'fixed', top:'48%', right:'20px'}}
+        <Button variant="outlined" sx={{position: 'fixed', top:'48%', right:'20px', zIndex:3}}
           onClick={()=> curImgIndex < savedImg.length -1 && setCurImgIndex(curImgIndex+1)}>
           <ChevronRightIcon></ChevronRightIcon>
         </Button>
