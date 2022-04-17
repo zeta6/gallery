@@ -69,7 +69,7 @@ const SelectImgModal = (): EmotionJSX.Element => {
           <ChevronRightIcon></ChevronRightIcon>
         </Button>
         <SelectImgModalWrapper>
-          {selectImgUrl && <Image layout="fill" src={selectImgUrl}></Image>}
+          {selectImgUrl && <Image layout="fill" unoptimized={true} src={selectImgUrl}></Image>}
         </SelectImgModalWrapper>
       </SelectImgModalContainer>
     </>
